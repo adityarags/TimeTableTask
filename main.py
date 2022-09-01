@@ -41,13 +41,18 @@ def loadData(filename):
     global ALLSLOTS
     ALLSLOTS = pickle.load(open(filename, "rb"))
 
-if __name__ == "__main__":
-    for i in range(2):
+def getData():
+    n = int(input("Number of slots: "))
+    for i in range(n):
         ALLSLOTS.append(Slot())
-    storeData("testingdata.dat")
-    loadData("testingdata.dat")
 
-    for i in ALLSLOTS:
-        print(i)
+def displayData():
+    for _ in ALLSLOTS:
+        print(_)
 
-    
+if __name__ == "__main__":
+    # getData()
+    # storeData("actdata/sampledata.dat")
+    loadData("actdata/sampledata.dat")
+    displayData()
+
